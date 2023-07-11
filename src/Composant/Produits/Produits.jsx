@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import'./Produits.css'
 import {NavLink} from 'react-router-dom';
 
+// import { useParams } from 'react-router-dom';
+
 const Products = ({ filterText }) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -48,7 +50,7 @@ const Products = ({ filterText }) => {
         <div className='product-cards'>
           {filter.map((product) => {
             if (product.title.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-              return null;
+              return <h1>Produit non trouvé</h1>;
             } else {
               return (
                 <div className='product-card' key={product.id}>
@@ -56,9 +58,9 @@ const Products = ({ filterText }) => {
                   <div className='product-details'>
                     <h5 className='product-title'>{product.title.substring(0, 12)}</h5>
                     <p className='product-price'>{product.price}FCFA</p>
-                    <NavLink to={'/products/${product.id}'} className='product-button'>
-                      Acheter
-                    </NavLink>
+                   
+                    <NavLink to={`/produitdetails{product.id}`} className='btn-primary'>Acheter</NavLink>
+
                   </div>
                 </div>
               );
@@ -74,8 +76,8 @@ const Products = ({ filterText }) => {
       <div className='container my-5 py-5'>
         <div className='row'>
           <div className='col-12 mb-5'>
-            <h1 className='page-title'>Nos Produits</h1>
-            <hr />
+          <h1>Nos<span>-Produits</span></h1>
+          <div className='trait'></div>
           </div>
         </div>
         <div className='row justify-content-center'>

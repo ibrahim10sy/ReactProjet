@@ -94,36 +94,40 @@
 }
 
 
-
-body{
+/* Utilisez des classes pour les sélecteurs fréquemment utilisés plutôt que des éléments */
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 } 
-.entete{
+
+.entete {
   display: flex;
   justify-content: space-between;
   padding: 2px;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 0 2rem; /* Combinez les marges gauche et droite en une seule ligne */
   background: white;
   align-items: center;
 }
-.entete-con{
+
+.entete-con {
   display: flex;
   gap: 2rem;
 }
-.tel{
+
+.tel {
   display: flex;
   align-items: center; 
-  gap:1px;
+  gap: 1px;
 }
-.logo-div{
+
+.logo-div {
   display: flex;
   align-items: center;
   margin-left: 2rem;
- }
- .header-one{
+}
+
+.header-one {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,16 +135,16 @@ body{
   width: 100%;
   height: 4rem;
   color: #fff;
-  /* margin-left: 2rem;
-  margin-right: 2rem; */
   background: var(--clr-grey-1);
- }
- .connexion{
+}
+
+.connexion {
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
- .con{
+}
+
+.con {
   width: 7rem;
   height: 2rem;
   text-align: center;
@@ -149,59 +153,71 @@ body{
   color: #333;
   font-family: 'Poppins';
   font-size: 20px;
-  background:var( --bs-warning) ;
- }
- input{
+  background: var(--bs-warning);
+}
+
+.inpt {
   width: 35%;
   height: 3rem;
   border-radius: 20px;
   border: none;
   text-align: center;
- }
- .logo-div p{
+}
+
+.logo-div p {
   font-size: 25px;
   font-family: 'Poppins';
- }
- .logo{
-  background:var( --bs-warning) ;
- }
- .md-s{
+}
+
+.logo {
+  background: var(--bs-warning);
+}
+
+.md-s {
   width: 35px;
   height: 2rem;
   display: flex;
   justify-content: center;
+  line-height: 2.2rem;
   border-radius: 50%;
   background-color: #d8dcdf;
- }
- .media{
+}
+
+.media {
   display: flex;
   gap: 1rem;
- }
- .NavLink{
+}
+
+.NavLink {
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-right: 1rem;
- }
- li{
+}
+
+li {
+  /* Supprimez le sélecteur "li" car il n'est pas nécessaire */
   text-decoration: none;
   list-style-type: none;
 }
- a{
+
+a {
   font-size: 20px;
   font-family: 'Poppins';
   text-decoration: none;
   cursor: pointer;
   color: #333;
 }
-.header-two{
+
+.header-two {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 4rem;
   background: var(--clr-grey-2);
 }
-.cat{
+
+.cat {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -209,13 +225,15 @@ body{
   font-family: 'Poppins';
   font-size: 20px;
 }
-select{
+
+select {
   height: 2.5rem;
   width: 8rem;
-  background:var( --bs-warning) ;
+  background: var(--bs-warning);
   border: none;
   text-align: center;
 }
+
 option {
   background: var(--clr-grey-1);
   font-size: 20px;

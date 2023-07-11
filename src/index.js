@@ -4,16 +4,14 @@ import App from './App';
 import 'boxicons';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-// import { Provider } from "react-redux";
-// import store from './redux/store';
+
 
 
 ReactDOM.render(
   <BrowserRouter>
-  
+ 
     <App />
-  
+
  </BrowserRouter>,
   document.getElementById("root")
 );

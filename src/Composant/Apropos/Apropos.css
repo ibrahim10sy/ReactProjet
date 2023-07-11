@@ -109,6 +109,9 @@
     font-family: 'Poppins';
     font-weight: 400;
 }
+.text i{
+    color: var(--bs-warning);
+}
 h1{
     text-transform: uppercase;
 }

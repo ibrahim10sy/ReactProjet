@@ -7,6 +7,7 @@ export default function Footer() {
   return (
     <div className='footer'>
       <h1>Envie d'idées de style et de friandises?</h1>
+      <h3>S'inscrire à notre newsletters</h3>
       <div className='new'>
       <input type='text' placeholder='Votre Email' className='i-foot'/>
       <button>S'inscrire</button>  
@@ -41,7 +42,7 @@ export default function Footer() {
      <h4>CONTACT</h4>
      <p>1-202-555-0105</p>
      <p>1-202-555-0105</p>
-     <p>help@shopper.com</p>
+     <p>ikaboutiki@gmail.com</p>
      </div>
      <div className='social-media'>
      <h4>Ikaboutiki.</h4>

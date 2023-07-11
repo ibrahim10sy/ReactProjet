@@ -92,83 +92,69 @@
     --bs-body-color: #212529;
     --bs-body-bg: #fff;
   }
+  
 
 body{
     margin: 0; padding: 0;
+    width: 100%;
 }
-.details {
-  height: 95vh;
+.container-contact{
+    height: 150vh;
+    /* display: flex; */
 }
-
-.container-details {
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
+.contact-con{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
 }
-
-
-.btn-d {
-  color: #fff;
-  padding: 10px 20px;
-  width: 208px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+input{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: 'Poppins';
 }
-
-.btn-outline-dark {
-  margin-left: 10px;
-  color: #000;
-  border: 1px solid #000;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
+textarea{
+    margin-top: 1rem;
+    width: 310px;
+    height: 200px;
 }
-
-.img-de {
-  padding: 10px 12px;
-  border: 1px solid #ffc107;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 1px 1px 2px #ffc107;
-  margin: 15px 0;
-  transition: 0.3s ease;
-  position: relative;
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
+.btn-contact{
+    background-color: var(--bs-warning);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-size: 18px;
+    width: 310px;
+    border: none;
 }
-
-.img-de:hover {
-  background: var(--clr-grey-1);
+.coordonner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem;
+    align-items: center;
+    font-family: 'Poppins';
+    text-align: justify;
+    /* gap: 4rem; */
 }
-
-.img-D {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+ #p{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1em;
 }
-
-.desc {
-  width: 220px;
-  font-family: 'Poppins', sans-serif;
-  text-align: justify;
-}
-
-
-
-.quantite {
-  width: 35px;
-  height: 25px;
-  border-radius: 0;
-  border: 1px solid black;
-  font-size: 17px;
-  font-weight: 500;
-  text-align: center;
-  margin-left: 15px;
-}
-
-.option {
-  color: #333;
-  background: #fff;
+.coor{
+    padding: 18px 54px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: var(--bs-warning);
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    white-space: nowrap;
 }

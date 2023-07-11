@@ -2,8 +2,16 @@ import React from 'react'
 import { ListeProduits } from '../ListeProduits/liste'
 import'./Home.css';
 import { NavLink } from 'react-router-dom';
+import { ListeProduits2 } from '../ListeProduits/liste2';
+import { useState } from 'react';
+
 
 export default function Home() {
+  const [voirPlus, setVoirPlus] = useState(false);
+
+  const handleClick = () => {
+    setVoirPlus(true);
+  };
   return (
     <div>
     <div>
@@ -46,6 +54,27 @@ export default function Home() {
      
     ))}
   </div>
+  
+   
+
+  {voirPlus && ( <div className='container-home' >
+    {ListeProduits2.map((product,id) => (
+      <div key={id} className='container-h'>
+        <img src={product.imgSrc} alt="" className='img' />
+        <p className="titre">{product.title}</p>
+        <p className='prix'>{product.prix}</p>
+        <div className='btn'>
+        <NavLink to={`/details/${product.id}`} className='btn-primary'>Acheter</NavLink></div>
+       
+      </div>
+    ))}
+  </div> )}
+  <div className="next-page">
+  <button className='btn-primary' onClick={() => setVoirPlus(!voirPlus)}>
+  {voirPlus ? "Voir moins" : "Voir plus"}
+</button>
+  </div>
+  <br />
     </div>
     </div>
   )

@@ -1,9 +1,37 @@
-import { Button } from 'bootstrap'
-import { BoxIcon } from 'boxicons'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import {app} from "../firebase.config"
+import {getAuth , signInWithPopup } from "firebase/auth";
+
+import  {useStateValue} from "../context/stateProvider"; 
+import  {actionType} from "../context/reducer"; 
 
 export default function Navbar({filterText,onFilterTextChange}) {
+
+  const [{user}, dispatch] = useStateValue();
+
+  const login = async () => {
+    if(!user){
+      const {
+        user: {refreshToken , providerData},
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({
+        type: action.SET_USER,
+        user:providerData[0],
+      });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    }else{
+      
+    }
+  };
+
+  const logout = () => {
+    dispatch({
+      type:actionType.SET_USER,
+      user: null,
+    });
+  };
+
   return (
     <div>
    
@@ -34,18 +62,30 @@ export default function Navbar({filterText,onFilterTextChange}) {
     <img src='/logo/logo.png' className="logo" style={{ width: '40px' }}/>
     <p>boutiki</p>
     </div>
-        <input type='search' placeholder='Recherche sur ikaboutiki...' value={filterText} onChange={(e)=> onFilterTextChange(e.target.value)} />
+        <input type='search' className='inpt' placeholder='Recherche sur ikaboutiki...' value={filterText} onChange={(e)=> onFilterTextChange(e.target.value)} />
         <div className='connexion'></div>
-        <div className='con'><a>Connexion</a></div>
+
+        <div className='con'><NavLink to="/connexion">Connexion</NavLink></div>
         <div className='media'>
-        <div className='md-s'>
-        <NavLink to="/connexion"><box-icon name='user' type='solid' flip='horizontal' ></box-icon></NavLink></div>
-        <div className='md-s'>
-        <NavLink to="/inscription"><box-icon name='user' type='solid' flip='horizontal' ></box-icon> </NavLink></div>
-        <div className='md-s'>
-        <NavLink to="/pannier"><box-icon name='user' type='solid' flip='horizontal' ></box-icon> </NavLink></div>
+         <div className='md-s'>
+        <NavLink to="/pannier"><i class='bx bxs-cart-alt'></i> </NavLink></div>
         </div>
-    </div>
+        <div className='md-s'>
+        <NavLink to="/inscription"><i class='bx bxs-user'></i></NavLink></div>
+        <div className='md-s'>
+        {/*<NavLink to=""><box-icon name='user' type='solid' flip='horizontal' ></box-icon> </NavLink>*/}
+        <div className='relative'>
+        <motion.img
+        whileTap={{scale: 0.6}}
+        src={user ? user.photoURL : Avatar } 
+        className="w-10 min-w-[40px] h-10 min-h[40px] drop-shadow-xl cursor-pointer rounded-full"
+        alt="userprofile"
+        onClick={login}
+        />
+        </div>
+        </div>
+    
+        </div>
 
     <div className='header-two'>
     <div className='cat'>
@@ -62,7 +102,7 @@ export default function Navbar({filterText,onFilterTextChange}) {
       <Link className='NavLink'  to="/">Accueil</Link>
       <Link className='NavLink' to="/produits">Produits</Link>
       <Link className='NavLink' to="/apropos">A propos</Link>  
-      <Link className='NavLink' to="/service">Service</Link>  
+      <Link className='NavLink' to="/service">Services</Link>  
       <Link className='NavLink' to="/contact">Contacts</Link>  
      
       </ul>
