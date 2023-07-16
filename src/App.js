@@ -12,7 +12,7 @@ import Details from './Composant/Details/Details';
 import Contact from './Composant/Contact/Contact';
 import Service from './Composant/Service/Service';
 import Connexion from './Composant/Connexion/Connexion';
-import Pannier from './Composant/Pannier/Pannier';
+import Panier from './Composant/Panier/Panier';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
     <Route path="/contact" element={<Contact />}/>
     <Route path="/connexion" element={<Connexion />}/>
     <Route path="/inscription" element={<Inscription />}/>
-    <Route path="/pannier" element={<Pannier />}/>
+    <Route path="/panier" element={<Panier />}/>
    
     </Routes>
     

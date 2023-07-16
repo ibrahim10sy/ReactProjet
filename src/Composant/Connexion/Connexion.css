@@ -109,10 +109,14 @@
     text-align: center;
 }
 .container-conn input{
-    margin: auto;
+    width: 100%;
+    border:none;
+    outline: none;
     margin-bottom: 1rem;
-    border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px var(--clr-grey-1) solid;
+}
+.container-conn input:hover{
+    border-bottom: 2px var(--bs-warning) solid;
 }
 .btn-ins{
     background: var(--bs-warning);

@@ -118,8 +118,9 @@ body{
 
 .btn-outline-dark {
   margin-left: 10px;
-  color: #000;
-  border: 1px solid #000;
+  color: #fff;
+  border: none;
+  background: var(--clr-grey-1);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;

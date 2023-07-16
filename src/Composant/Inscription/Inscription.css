@@ -99,7 +99,7 @@
 
 .container-ins {
     width: 400px;
-    height: 325px;
+    height: 345px;
     box-shadow: 0 1px 1px rgba(5, 5, 5, 0.1), 0 3px 3px rgba(5, 5, 5, 0.23);
     margin: auto;
     margin-top: 3rem;
@@ -112,15 +112,16 @@
     margin-bottom: 1rem;
 }
 
-.container-ins input {
-    display: block;
+.container-ins input{
     width: 100%;
+    border:none;
+    outline: none;
     margin-bottom: 1rem;
-    border: none;
-    border-bottom: 1px solid black;
-    padding: 0.5rem;
+    border-bottom: 1px var(--clr-grey-1) solid;
 }
-
+.container-ins input:hover{
+    border-bottom: 2px var(--bs-warning) solid;
+}
 .btn-ins {
     display: inline-block;
     background-color: var(--bs-warning);

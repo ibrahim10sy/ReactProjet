@@ -175,6 +175,7 @@ body {
 
 .md-s {
   width: 35px;
+  position: relative;
   height: 2rem;
   display: flex;
   justify-content: center;
@@ -182,7 +183,13 @@ body {
   border-radius: 50%;
   background-color: #d8dcdf;
 }
-
+.ncard{
+  position: absolute;
+  left: 65%;
+  top: -40%;
+  font-weight: 800;
+  font-size: 20px;
+}
 .media {
   display: flex;
   gap: 1rem;

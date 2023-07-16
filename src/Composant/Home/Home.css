@@ -92,19 +92,30 @@
     --bs-body-color: #212529;
     --bs-body-bg: #fff;
   }
+  body{
+   
+  }
   .home-head {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 5rem; */
+    background-image: url("../../../public/assets/font1.JPEG" );
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 225vh;
+    height: 100vh;
   }
   
   .information {
     flex: 1;
     text-align: center;
     padding: 2rem;
+    float: right;
+    margin-top: 10rem;
+    
   }
   
   .information h1 {
