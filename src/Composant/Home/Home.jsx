@@ -35,10 +35,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='trait'></div>
+       
         <div className='C-offre'>
           <box-icon className="low" name='low-vision'></box-icon>
           <p id='p-offre'>Offres du jour</p></div>
+          <div className='trait'></div>
       </div>
       <div >
         <div className='container-home' >

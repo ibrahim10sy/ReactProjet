@@ -7,17 +7,17 @@ import {NavLink} from 'react-router-dom';
 const Products = ({ filterText }) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
   useEffect(() => {
     const getProducts = async () => {
-      setLoading(true);
+     //setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
       if (componentMounted) {
         setData(await response.clone().json());
         setFilter(await response.json());
-        setLoading(false);
+       // setLoading(false);
         console.log(filter);
       }
     };
@@ -29,17 +29,19 @@ const Products = ({ filterText }) => {
     };
   }, []);
 
-  const Loading = () => {
+  {/*const Loading = () => {
     return (
       <div>
         <skeleton />
       </div>
     );
-  };
+  };*/}
 
-  const ShowProducts = () => {
+  //const ShowProducts = () => {
     return (
       <div>
+      <h1>Nos<span>-Produits</span></h1>
+      <div className='trait'></div>
         <div className='buttons'>
           <button className='button'>Tout</button>
           <button className='button'>Pour Homme</button>
@@ -48,9 +50,10 @@ const Products = ({ filterText }) => {
           <button className='button'>Electronique</button>
         </div>
         <div className='product-cards'>
+        
           {filter.map((product) => {
             if (product.title.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-              return
+              return null;
             } else {
               return (
                 <div className='product-card' key={product.id}>
@@ -71,7 +74,7 @@ const Products = ({ filterText }) => {
     );
   };
 
-  return (
+ {/*  return (
     <div>
       <div className='container my-5 py-5'>
         <div className='row'>
@@ -86,6 +89,6 @@ const Products = ({ filterText }) => {
       </div>
     </div>
   );
-};
+};*/}
 
 export default Products;

@@ -215,7 +215,10 @@ a {
   cursor: pointer;
   color: #333;
 }
-
+.media-icon{
+  display: flex;
+  gap: 1rem;
+}
 .header-two {
   display: flex;
   align-items: center;

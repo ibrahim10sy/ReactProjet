@@ -35,7 +35,7 @@ export default function Panier() {
           </ul>
           <div class="cart-total">
             <span>Total: </span>
-            <span class="total-price"> FCFA</span>
+            <span class="total-price">{produit.prix} FCFA</span>
           </div>
           <button class="btn-checkout">Payer Maintenant</button>
 

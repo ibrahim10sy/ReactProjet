@@ -94,7 +94,7 @@ h2{
       
       .panier .trait {
         height: 1px;
-        background-color: #ccc;
+        background-color: var(--bs-warning);
         margin-bottom: 20px;
       }
       
@@ -168,7 +168,8 @@ h2{
         background-color: var(--clr-grey-1);
         color: #fff;
         border: none;
-        width: 100%;
+        width: 20%;
+        margin-left: 39%;
         border-radius: 4px;
         padding: 10px 20px;
         cursor: pointer;

@@ -43,11 +43,12 @@ export default function Navbar({ filterText, onFilterTextChange }) {
           value={filterText}
           onChange={(e) => onFilterTextChange(e.target.value)}
         />
-        <div className='connexion'></div>
+        
 
         <div className='con'>
           <NavLink to='/connexion'>Connexion</NavLink>
         </div>
+        <div className='media-icon'>
         <div className='media'>
           <div className='md-s'>
             <NavLink to='/panier'>
@@ -76,7 +77,7 @@ export default function Navbar({ filterText, onFilterTextChange }) {
           </div>
         </div>
       </div>
-
+      </div>
       <div className='header-two'>
         <div className='cat'>
           <select name='Categorie' value='categorie' id=''>
