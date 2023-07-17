@@ -47,7 +47,7 @@ export default function Home() {
               <img src={produit.imgSrc} alt="" className='img' />
               <p className="titre">{produit.title}</p>
               <p className='prix'>{produit.prix}</p>
-              <div className='btn'>
+              <div className='btn-home'>
                 <NavLink to={`/details/${produit.id}`} className='btn-primary'>Acheter</NavLink></div>
 
             </div>
@@ -58,13 +58,13 @@ export default function Home() {
 
 
         {voirPlus && (<div className='container-home' >
-          {ListeProduits2.map((product, id) => (
+          {ListeProduits2.map((produit, id) => (
             <div key={id} className='container-h'>
-              <img src={product.imgSrc} alt="" className='img' />
-              <p className="titre">{product.title}</p>
-              <p className='prix'>{product.prix}</p>
-              <div className='btn'>
-                <NavLink to={`/details/${product.id}`} className='btn-primary'>Acheter</NavLink></div>
+              <img src={produit.imgSrc} alt="" className='img' />
+              <p className="titre">{produit.title}</p>
+              <p className='prix'>{produit.prix}</p>
+              <div className='btn-home'>
+                <NavLink to={`/details/${produit.id}`} className='btn-primary'>Acheter</NavLink></div>
 
             </div>
           ))}

@@ -66,7 +66,7 @@
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
-  --bs-warning: #FFC107;
+  --bs-warning: #ff8c00;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
@@ -153,7 +153,7 @@ body {
   color: #333;
   font-family: 'Poppins';
   font-size: 20px;
-  background: var(--bs-warning);
+  background: #ff8c00;
 }
 
 .inpt {
@@ -170,7 +170,7 @@ body {
 }
 
 .logo {
-  background: var(--bs-warning);
+  background: #ff8c00;
 }
 
 .md-s {
@@ -236,7 +236,7 @@ a {
 select {
   height: 2.5rem;
   width: 8rem;
-  background: var(--bs-warning);
+  background:  #ff8c00;
   border: none;
   text-align: center;
 }

@@ -17,7 +17,8 @@ export const ListeProduits = [
       id :3,
       title: "Montre",
       imgSrc: "../assets/image/offres3.png",
-      prix: "60 000 FCFA"
+      prix: "60 000 FCFA",
+      desc:""
     },
     {
       id :4,

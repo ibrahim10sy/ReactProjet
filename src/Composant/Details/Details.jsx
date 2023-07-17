@@ -20,49 +20,51 @@ export default function Details() {
 
   return (
     <div className='details'>
-      <h1>Détail du {produit.title}</h1>
+      <h1>Détail du <span>produit</span></h1>
       <div className='trait'></div>
       <div className='container-details'>
         <div className='img-de'>
           <img src={produit.imgSrc} alt='image' className='img-D' />
         </div>
-        <div className='details'>
+        <div className='details-content'>
           <p className='titre'>{produit.title}</p>
           <p className='desc'>{produit.desc}</p>
           <p className='prix'>Prix : {produit.prix}</p>
-          <p className='taille'>Taille :</p>
-          <select>
-            <option className='option' value={37}>
-              37
-            </option>
-            <option className='option' value={38}>
-              38
-            </option>
-            <option className='option' value={39}>
-              39
-            </option>
-            <option className='option' value={40}>
-              40
-            </option>
-            <option className='option' value={41}>
-              41
-            </option>
-          </select>
-          <p className='taille'>
-            Quantité : <input type='number' className='quantite' />
-          </p>
-          <div className='btn-details'>
-            <button className='btn-d' onClick={() => ajouterAuPanier(produit)} >
+          <div className='select-container'>
+            <p className='taille'>Taille :</p>
+            <select className='taille-select'>
+              <option className='option' value={37}>
+                37
+              </option>
+              <option className='option' value={38}>
+                38
+              </option>
+              <option className='option' value={39}>
+                39
+              </option>
+              <option className='option' value={40}>
+                40
+              </option>
+              <option className='option' value={41}>
+                41
+              </option>
+            </select>
+          </div>
+          <div className='quantite-container'>
+            <p className='taille'>
+              Quantité : <input type='number' className='quantite' />
+            </p>
+          </div>
+          <div className='btn-container'>
+            <button className='btn-d' onClick={() => ajouterAuPanier(produit)}>
               Ajouter au panier
             </button>
             <NavLink to='/panier' className='btn btn-outline-dark'>
               Voir le panier
             </NavLink>
-
           </div>
         </div>
       </div>
     </div>
   );
 }
- 

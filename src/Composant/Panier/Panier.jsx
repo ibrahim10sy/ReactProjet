@@ -16,7 +16,8 @@ export default function Panier() {
   return (
     <div className='panier'>
       <h1>Votre-<span>Panier</span></h1>
-      {cartItems.map((produit) => (
+      <div className='trait'></div>
+      {cartItems.map((produit,product) => (
         <div className='cart-container' key={produit.id}>
           <ul class="cart-items">
             <li class="cart-item">

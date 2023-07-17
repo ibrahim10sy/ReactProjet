@@ -42,7 +42,7 @@
     text-align: center;
   }
   
-  .product-image {
+  .product-images{
     height: 250px;
     object-fit: cover;
     width: 100%;

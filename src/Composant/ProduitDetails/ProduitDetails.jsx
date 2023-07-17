@@ -1,78 +1,75 @@
-import React, { useState, useEffect } from "react"
-import { useParams } from "react-router"
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/actions';
+import './ProduitDetails.css'
 
-// import Store from './redux/store';
+const Product = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
 
-//import skeleton from './react-loading-skeleton';
+  const dispatch = useDispatch();
 
-const Product = () =>{
+  const ajouterAuPanier = (product) => {
+    dispatch(addToCart(product));
+  };
 
-    const {id} = useParams();
-    const [product, setProduct] = useState([]);
-    const[loading, setLoading] = useState(false);
-  
-   
-    
-
-    useEffect(() => {
-        const getProduct = async () => {
-             setLoading(true);
-             const response = await fetch('https://fakestoreapi.com/products/${id}');
-             setProduct(await response.json()); 
-             setLoading(false);
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+        if (response.ok) {
+          const productData = await response.json();
+          setProduct(productData);
+        } else {
+          console.error('Erreur de chargement des données du produit');
         }
-       getProduct();
-      }, [])
-
-     const Loading = () =>{
-        return(
-          <div>
-          
-          <div className="col-md-6">
-            <skeleton height={400} />
-          </div>
-
-          
-          </div>
-        )
-      } 
-      const ShowProduct = () =>{
-        return(
-          <div>
-              <div className="col-md-6">
-              <img src={product.image}  alt={product.title} height="400px" width="400px" />
-              </div>
-              <div className="col-md-6">
-              <h4 className="text-uppercase text-black-50">
-                {product.category}
-              </h4>
-              <h1 className="display-5">{product.title}</h1>
-              <p className="lead fw-bolder">
-                Rating {product.rating && product.rating.rate}
-                <i className="fa fa-star"></i>
-              </p>
-              <h3 className="display-6 fw-bolde my-4">{product.price}FCFA</h3>
-               <p className="lead">{product.description}</p>
-               <button className="btn btn-outline-dark px-4 py-2">Ajouter au panier</button>
-               <NavLink  to="/pannier " className="btn btn-outline-dark">Voir le panier</NavLink>
-         </div>
-        </div>
-        )
+      } catch (error) {
+        console.error('Erreur lors de la requête API', error);
       }
+    };
 
-      return (
-        <div>
-              <div className="container py-5">
-              <div className="row py-4 ">
-              <h1>Détails du {product.title} </h1>
-              <div className='trait'></div>
-                  {loading ? <Loading /> : <ShowProduct/>}
-              </div>   
-              </div>   
+    getProduct();
+  }, [id]);
+
+  return (
+    <div className='product-details'>
+      <h1>Détail du <span>produit</span></h1>
+      <div className='trait'></div>
+      <div className='container-details'>
+        <div className='image-container'>
+          <img src={product.image} alt='image' className='product-image' />
         </div>
-      )
+        <div className='details-container'>
+          <h5 className='title'>{product.title}</h5>
+          <p className='description'>{product.description}</p>
+          <p className='price'>Prix : {product.price}</p>
+          <p className='size'>Taille :</p>
+          <select className='size-select'>
+            <option value={37}>37</option>
+            <option value={38}>38</option>
+            <option value={39}>39</option>
+            <option value={40}>40</option>
+            <option value={41}>41</option>
+          </select>
+          <div className="quantity-container">
+            <label>Quantité </label>
+            <input type="number" min="1" defaultValue="1" />
+          </div>
+          <br />
+          <div className='buttons-container'>
+            <button className='add-to-cart-button' onClick={() => ajouterAuPanier(product)}>
+              Ajouter au panier
+            </button>
+            <NavLink to='/panier' className='view-cart-button btn btn-outline-dark'>
+              Voir le panier
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-
-    }
-  export default Product;
+export default Product;

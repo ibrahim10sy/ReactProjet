@@ -50,16 +50,16 @@ const Products = ({ filterText }) => {
         <div className='product-cards'>
           {filter.map((product) => {
             if (product.title.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-              return <h1>Produit non trouvé</h1>;
+              return
             } else {
               return (
                 <div className='product-card' key={product.id}>
-                  <img src={product.image} className='product-image' alt={product.title} />
+                  <img src={product.image} className='product-images' alt={product.title} />
                   <div className='product-details'>
                     <h5 className='product-title'>{product.title.substring(0, 12)}</h5>
                     <p className='product-price'>{product.price}FCFA</p>
                    
-                    <NavLink to={`/produitdetails{product.id}`} className='btn-primary'>Acheter</NavLink>
+                    <NavLink to={`/produitdetails/${product.id}`} className='btn-primary'>Acheter</NavLink>
 
                   </div>
                 </div>
