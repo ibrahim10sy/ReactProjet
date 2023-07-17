@@ -3,7 +3,7 @@ import { useParams, NavLink } from 'react-router-dom';
 import { ListeProduits } from '../ListeProduits/liste';
 import './Details.css';
 import { useDispatch } from 'react-redux';
-import { addCart } from '../redux/action';
+import { addToCart } from '../redux/actions';
 
 export default function Details() {
   const { id } = useParams();
@@ -11,7 +11,7 @@ export default function Details() {
   const dispatch = useDispatch();
 
   const ajouterAuPanier = (produit) => {
-    dispatch(addCart(produit));
+    dispatch(addToCart(produit));
   };
 
   if (!produit) {
@@ -52,10 +52,10 @@ export default function Details() {
             Quantité : <input type='number' className='quantite' />
           </p>
           <div className='btn-details'>
-            <button className='btn-d' onClick={() => ajouterAuPanier(produit)}>
+            <button className='btn-d' onClick={() => ajouterAuPanier(produit)} >
               Ajouter au panier
             </button>
-            <NavLink to='/pannier' className='btn btn-outline-dark'>
+            <NavLink to='/panier' className='btn btn-outline-dark'>
               Voir le panier
             </NavLink>
 

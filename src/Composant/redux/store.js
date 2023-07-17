@@ -1,5 +1,9 @@
-import { createStore } from 'redux';
-import rootReducer from './reducer';
+// store.js
 
-const store = createStore(rootReducer);
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './cartReducer';
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
 export default store;

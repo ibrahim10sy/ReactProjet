@@ -25,7 +25,7 @@ function App() {
     <Navbar filterText={filterText}  onFilterTextChange={setFilterText} />
   {/*<Home />*/}
     <Routes>
-    <Route path="/" element={<Home />}/>
+    <Route path="/" element={<Home filterText={filterText} />}/>
     <Route path="/details/:id" element={<Details/>}/>
     <Route path="/produits" element={<Produits filterText={filterText} />}/>
     <Route path="/produitdetails/:id" element={<ProduitDetails/>}/>

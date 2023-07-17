@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { addToCart } from './redux/actions';
 
 export default function Navbar({ filterText, onFilterTextChange }) {
-  const state = useSelector((state) => state.handleCart);
+//  const state = useSelector((state) => state.cartItems);
+ const cartItems = useSelector((state) => state.cartItems);
 
   return (
     <div>
@@ -50,7 +52,7 @@ export default function Navbar({ filterText, onFilterTextChange }) {
           <div className='md-s'>
             <NavLink to='/panier'>
               <i className='bx bxs-cart-alt'></i>
-              <span className='ncard'>{0}</span>
+              <span className='ncard'>{cartItems.length}</span>
             </NavLink>
           </div>
         </div>
