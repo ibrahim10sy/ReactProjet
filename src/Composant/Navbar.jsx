@@ -53,7 +53,7 @@ export default function Navbar({ filterText, onFilterTextChange }) {
           <div className='md-s'>
             <NavLink to='/panier'>
               <i className='bx bxs-cart-alt'></i>
-              <span className='ncard'>{cartItems.length}</span>
+              <div className='rond'> <span className='ncard'>{cartItems.length}</span></div>
             </NavLink>
           </div>
         </div>
