@@ -5,9 +5,9 @@ export const addToCart = (produit) => {
         playload: produit,
     };
 };
-export const delToCart = (produit) => {
+export const delToCart = (produitId) => {
     return {
         type: 'DEL_TO_CART',
-        playload: produit,
+        playload: produitId,
     };
 };

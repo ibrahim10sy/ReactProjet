@@ -11,12 +11,13 @@ const cartReducer = (state = initialState, action)=>{
                 cartItems: [...state.cartItems, action.playload],
             };
         case 'DEL_TO_CART':
-            return{
+            return {
                 ...state,
-                cartItems:[],
+                cartItems: state.cartItems.filter(item => item.id !== action.payload),
             };
-            default:
-                return state;
+        default:
+            return state;
+           
     }
 };
 

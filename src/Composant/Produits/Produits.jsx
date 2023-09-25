@@ -29,25 +29,17 @@ const Products = ({ filterText }) => {
     };
   }, []);
 
-  {/*const Loading = () => {
-    return (
-      <div>
-        <skeleton />
-      </div>
-    );
-  };*/}
-
-  //const ShowProducts = () => {
+ 
     return (
       <div>
       <h1>Nos<span>-Produits</span></h1>
       <div className='trait'></div>
         <div className='buttons'>
-          <button className='button'>Tout</button>
-          <button className='button'>Pour Homme</button>
-          <button className='button'>Pour femme</button>
-          <button className='button'>Accessoire</button>
-          <button className='button'>Electronique</button>
+          <button className='btn-primary'>Tout</button>
+          <button className='btn-primary'>Pour Homme</button>
+          <button className='btn-primary'>Pour femme</button>
+          <button className='btn-primary'>Accessoire</button>
+          <button className='btn-primary'>Electronique</button>
         </div>
         <div className='product-cards'>
         
@@ -74,21 +66,5 @@ const Products = ({ filterText }) => {
     );
   };
 
- {/*  return (
-    <div>
-      <div className='container my-5 py-5'>
-        <div className='row'>
-          <div className='col-12 mb-5'>
-          <h1>Nos<span>-Produits</span></h1>
-          <div className='trait'></div>
-          </div>
-        </div>
-        <div className='row justify-content-center'>
-          {loading ? <Loading /> : <ShowProducts />}
-        </div>
-      </div>
-    </div>
-  );
-};*/}
 
 export default Products;

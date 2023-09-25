@@ -38,7 +38,7 @@ export default function Home() {
        
         <div className='C-offre'>
           <box-icon className="low" name='low-vision'></box-icon>
-          <p id='p-offre'>Offres du jour</p></div>
+          <h1 id='p-offre'>Offres <span>du jour</span></h1></div>
           <div className='trait'></div>
       </div>
       <div >
